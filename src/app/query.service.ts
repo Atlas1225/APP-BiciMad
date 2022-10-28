@@ -9,9 +9,9 @@ export class QueryService {
   constructor(private httpClient:HttpClient) { }
 
   query() {
-    let header= new HttpHeaders()
-    header.set("Access-Control-Allow-Origin", "*");
-    header.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    return this.httpClient.get<string>('http://localhost:8000/sparql?query=SELECT ?s ?p ?o WHERE { ?s ?p ?o }', header)
+    let headers= new HttpHeaders()
+    headers.set("Access-Control-Allow-Origin", "*");
+    headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    return this.httpClient.get<string>('http://localhost:8000/sparql?query=SELECT ?s ?p ?o WHERE { ?s ?p ?o }', {headers})
   }
 }
