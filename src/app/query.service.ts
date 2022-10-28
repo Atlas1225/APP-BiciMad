@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,6 +9,9 @@ export class QueryService {
   constructor(private httpClient:HttpClient) { }
 
   query() {
-    return this.httpClient.get<string>('http://localhost:8000/sparql?query=SELECT ?s ?p ?o WHERE { ?s ?p ?o }')
+    let header= new HttpHeaders()
+    header.set("Access-Control-Allow-Origin", "*");
+    header.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    return this.httpClient.get<string>('http://localhost:8000/sparql?query=SELECT ?s ?p ?o WHERE { ?s ?p ?o }', header)
   }
 }
