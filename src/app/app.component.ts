@@ -9,7 +9,7 @@ import { QueryService } from './query.service';
 })
 export class AppComponent implements OnInit {
   constructor(private query : QueryService){}
-  test: string = 'nothing';
+  test: any = 'nothing';
   array = [{lat: 40.4171107, lng: -3.701998},{lat: 40.42058, lng: -3.7056739},{lat: 40.428362, lng: -3.7020743}]
   center!: google.maps.LatLngLiteral;
   ngOnInit(): void {
