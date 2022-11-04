@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QueryService } from './query.service';
+import { MaterialDesignModule } from './material-design/material-design.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { QueryService } from './query.service';
     GoogleMapsModule,
     HttpClientModule,
     FormsModule,
+    MaterialDesignModule
   ],
   providers: [QueryService],
   bootstrap: [AppComponent]
